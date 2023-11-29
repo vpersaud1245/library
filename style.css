@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+.library-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5%;
+}
+
+.book-card {
+  border: 1px solid black;
+  padding: 2rem 1.5rem 1rem 1.5rem;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.book-title {
+  font-size: 1.7rem;
+}
+
+.num-of-pages {
+  font-size: 0.8rem;
+  align-self: flex-end;
+}
+
+.book-card-buttons {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  padding: 5px 20px;
+  font-size: 0.8rem;
+}
+
+.book-card-buttons + hr {
+  margin: 0 -1.5rem;
+}
+
+.progress-info {
+  margin: 0.8rem 0 0 -0.8rem;
+}
