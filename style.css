@@ -23,7 +23,7 @@ video {
 .library-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 5%;
+  gap: 10%;
 }
 
 .book-card {
@@ -57,7 +57,7 @@ button {
   font-size: 0.8rem;
 }
 
-.book-card-buttons + hr {
+.bottom-break {
   margin: 0 -1.5rem;
 }
 
