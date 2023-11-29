@@ -23,9 +23,12 @@ video {
 .library-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10%;
+  gap: 5%;
 }
 
+/* 
+  BOOK CARD 
+*/
 .book-card {
   border: 1px solid black;
   padding: 2rem 1.5rem 1rem 1.5rem;
@@ -63,4 +66,32 @@ button {
 
 .progress-info {
   margin: 0.8rem 0 0 -0.8rem;
+}
+
+/*
+  ADD BOOK CARD
+*/
+
+.add-book-card {
+  display: grid;
+  place-items: center;
+}
+
+button {
+  background-color: white;
+  padding: 0;
+  border: none;
+  width: 25%;
+  height: auto;
+  transition: transform 150ms ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+img {
+  height: auto;
+  width: 100%;
 }

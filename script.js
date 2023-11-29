@@ -1,4 +1,5 @@
 const libraryGrid = document.querySelector(".library-grid");
+const addBookCard = document.querySelector(".add-book-card");
 const library = [];
 
 function Book(title, author, pages, isRead) {
@@ -60,7 +61,7 @@ function createBookCardElement(book) {
   bottomBreak.className = "bottom-break";
   bookCard.appendChild(bottomBreak);
   bookCard.appendChild(progressInfo);
-  libraryGrid.appendChild(bookCard);
+  libraryGrid.insertBefore(bookCard, addBookCard);
 }
 
 addBookToLibrary(new Book("Harry Potter", "J.K Rowling", 344, true));
@@ -77,3 +78,4 @@ addBookToLibrary(
 
 displayBooks();
 createBookCardElement(new Book("Lord of the Rings", "J.J Tolkein", 546, true));
+createBookCardElement(new Book("Harry Potter", "J.K Rowling", 344, true));
