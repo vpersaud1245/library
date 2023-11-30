@@ -15,7 +15,7 @@ function addBookToLibrary(book) {
 
 function displayBooks() {
   library.forEach((book) => {
-    console.log(book);
+    createBookCardElement(book);
   });
 }
 
@@ -77,5 +77,3 @@ addBookToLibrary(
 );
 
 displayBooks();
-createBookCardElement(new Book("Lord of the Rings", "J.J Tolkein", 546, true));
-createBookCardElement(new Book("Harry Potter", "J.K Rowling", 344, true));

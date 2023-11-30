@@ -3,6 +3,14 @@
 *::after {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "Optima";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Optima"), url("fonts/OPTIMA.woff") format("woff");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +19,7 @@
 
 body {
   min-height: 100vh;
+  font-family: "Optima", sans-serif;
 }
 img,
 picture,
@@ -20,10 +29,34 @@ video {
   max-width: 100%;
 }
 
+/* 
+  NAV
+*/
+
+.nav {
+  height: 10vh;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.website-name {
+  font-size: 2rem;
+}
+
+.logo {
+  width: 5%;
+}
+
+/*
+  LIBRARY GRID
+*/
+
 .library-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5%;
+  padding: 3rem 2rem;
 }
 
 /* 
@@ -32,6 +65,7 @@ video {
 .book-card {
   border: 1px solid black;
   padding: 2rem 1.5rem 1rem 1.5rem;
+  border-radius: 0.8em;
 }
 
 .book-info {
@@ -55,9 +89,11 @@ video {
   gap: 1rem;
 }
 
-button {
+.book-card-buttons > button {
   padding: 5px 20px;
   font-size: 0.8rem;
+  border: 1px solid black;
+  border-radius: 0.4em;
 }
 
 .bottom-break {
@@ -77,7 +113,7 @@ button {
   place-items: center;
 }
 
-button {
+.add-book-card > button {
   background-color: white;
   padding: 0;
   border: none;
