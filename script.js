@@ -69,3 +69,9 @@ function createBookCardElement(book) {
 addBookButton.addEventListener("click", (e) => {
   dialog.showModal();
 });
+
+dialog.addEventListener("click", (e) => {
+  if (e.target.nodeName === "DIALOG") {
+    dialog.close();
+  }
+});
