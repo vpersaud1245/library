@@ -151,8 +151,8 @@ dialog {
 }
 
 dialog::backdrop {
-  background-color: gray;
-  opacity: 20%;
+  background-color: black;
+  opacity: 60%;
 }
 
 @keyframes pop {
@@ -198,8 +198,8 @@ input:not([type="checkbox"]) {
   background-color: transparent;
   transition: 0.5ms;
   font-size: 0.8rem;
-  height: 2rem;
-  padding: 0 10px;
+  height: 2.2rem;
+  padding: 2px 10px 0 10px;
   width: 80%;
 }
 
@@ -208,7 +208,12 @@ input:not([type="checkbox"]):focus {
   border-radius: 0.2em;
 }
 
-input:focus ~ label {
+input::placeholder {
+  color: transparent;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
   font-size: 0.8rem;
   background-color: black;
   padding: 1.5px 7px;
