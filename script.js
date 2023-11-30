@@ -63,17 +63,3 @@ function createBookCardElement(book) {
   bookCard.appendChild(progressInfo);
   libraryGrid.insertBefore(bookCard, addBookCard);
 }
-
-addBookToLibrary(new Book("Harry Potter", "J.K Rowling", 344, true));
-addBookToLibrary(new Book("Lord of the Rings", "J.J Tolkein", 546, false));
-addBookToLibrary(new Book("Atomic Habits", "James Clear", 214, false));
-addBookToLibrary(
-  new Book(
-    "How to Win Friends and Influence People",
-    "Dale Carneigie",
-    409,
-    true
-  )
-);
-
-displayBooks();

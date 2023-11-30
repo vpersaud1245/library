@@ -111,6 +111,7 @@ video {
 .add-book-card {
   display: grid;
   place-items: center;
+  gap: 1em;
 }
 
 .add-book-card > button {
@@ -120,6 +121,10 @@ video {
   width: 25%;
   height: auto;
   transition: transform 150ms ease-in-out;
+}
+
+.add-book-card > div {
+  font-size: 1.5rem;
 }
 
 button:hover {
