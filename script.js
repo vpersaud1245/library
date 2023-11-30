@@ -1,5 +1,7 @@
 const libraryGrid = document.querySelector(".library-grid");
 const addBookCard = document.querySelector(".add-book-card");
+const addBookButton = document.querySelector(".add-book-button");
+const dialog = document.querySelector("dialog");
 const library = [];
 
 function Book(title, author, pages, isRead) {
@@ -63,3 +65,7 @@ function createBookCardElement(book) {
   bookCard.appendChild(progressInfo);
   libraryGrid.insertBefore(bookCard, addBookCard);
 }
+
+addBookButton.addEventListener("click", (e) => {
+  dialog.showModal();
+});

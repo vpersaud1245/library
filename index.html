@@ -9,17 +9,45 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <div class="nav">
-      <img class="logo" src="icons/logo.svg" alt="logo" />
-      <div class="website-name">Library</div>
-    </div>
-    <div class="library-grid">
-      <div class="add-book-card">
-        <button>
-          <img src="icons/add-book-icon.svg" alt="" />
-        </button>
-        <div>Add Book</div>
+    <div class="header">
+      <div class="nav">
+        <img class="logo" src="icons/logo.svg" alt="logo" />
+        <div class="website-name">Library</div>
       </div>
+    </div>
+    <div class="main">
+      <div class="library-grid">
+        <div class="add-book-card">
+          <button class="add-book-button">
+            <img src="icons/add-book-icon.svg" alt="" />
+          </button>
+          <div>Add Book</div>
+        </div>
+      </div>
+    </div>
+    <div class="modal">
+      <dialog>
+        <form action="" method="dialog">
+          <h1>New Book</h1>
+          <div class="form-item">
+            <input type="text" name="title-input" required />
+            <label for="">Title</label>
+          </div>
+          <div class="form-item">
+            <input type="text" name="author-input" required />
+            <label for="">Author</label>
+          </div>
+          <div class="form-item">
+            <input type="number" name="page-input" required />
+            <label for="">Pages</label>
+          </div>
+          <div class="read-form-item">
+            <label class="read-input-label" for="read-input">Read</label>
+            <input type="checkbox" name="read-input" />
+          </div>
+          <button type="submit">Add to Library</button>
+        </form>
+      </dialog>
     </div>
   </body>
 </html>
