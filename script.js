@@ -28,6 +28,8 @@ function displayBooks() {
 }
 
 function createBookCardElement(book) {
+  let bookIndex = library.indexOf(book);
+  console.log(bookIndex);
   const bookCard = document.createElement("div");
   bookCard.className = "book-card";
   const bookInfo = document.createElement("div");
@@ -72,16 +74,9 @@ function createBookCardElement(book) {
   libraryGrid.insertBefore(bookCard, addBookCard);
 
   deleteBookButton.addEventListener("click", (e) => {
+    console.log(book);
+    library.splice(bookIndex, 1);
     bookCard.remove();
-    //remove book from library
-    library = library.filter((obj) => {
-      return (
-        obj.title !== book.title &&
-        obj.author !== book.author &&
-        obj.pages !== book.pages &&
-        obj.isRead !== book.isRead
-      );
-    });
     console.log(library);
   });
 }
