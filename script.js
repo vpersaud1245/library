@@ -8,7 +8,7 @@ const titleInput = document.querySelector("input[name=title-input]");
 const authorInput = document.querySelector("input[name=author-input]");
 const pageInput = document.querySelector("input[name=page-input]");
 const isReadInput = document.querySelector("input[name=read-input]");
-const library = [];
+let library = [];
 
 function Book(title, author, pages, isRead) {
   this.title = title;
@@ -70,6 +70,20 @@ function createBookCardElement(book) {
   bookCard.appendChild(bottomBreak);
   bookCard.appendChild(progressInfo);
   libraryGrid.insertBefore(bookCard, addBookCard);
+
+  deleteBookButton.addEventListener("click", (e) => {
+    bookCard.remove();
+    //remove book from library
+    library = library.filter((obj) => {
+      return (
+        obj.title !== book.title &&
+        obj.author !== book.author &&
+        obj.pages !== book.pages &&
+        obj.isRead !== book.isRead
+      );
+    });
+    console.log(library);
+  });
 }
 
 addBookButton.addEventListener("click", (e) => {
@@ -95,6 +109,5 @@ form.addEventListener("submit", (e) => {
   createBookCardElement(book);
   form.reset();
   dialog.close();
+  console.log(library);
 });
-
-displayBooks();
