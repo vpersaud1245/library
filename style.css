@@ -84,6 +84,7 @@ video {
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
+  height: 40%;
 }
 
 .book-title {

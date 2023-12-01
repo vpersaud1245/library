@@ -130,3 +130,21 @@ form.addEventListener("submit", (e) => {
 
   addBookCard.style.gridColumn = "auto";
 });
+
+// Test data
+
+addBookToLibrary(
+  new Book("Harry Potter and the Goblet of Fire", "J.K Rowling", 459, true)
+);
+addBookToLibrary(
+  new Book(
+    "How to Win Friends and Influence People",
+    "Dale Carnegie",
+    745,
+    false
+  )
+);
+addBookToLibrary(new Book("Atomic Habits", "James Clear", 244, true));
+addBookToLibrary(new Book("The Hobbit", "J.J Tolkein", 732, true));
+
+displayBooks();
