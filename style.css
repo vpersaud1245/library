@@ -35,9 +35,11 @@ video {
 
 .nav {
   height: 10vh;
-  border-bottom: 1px solid black;
   display: flex;
   align-items: center;
+  box-shadow: 0px 5px 5px rgba(139, 138, 138, 0.75);
+  position: relative;
+  z-index: 10;
 }
 
 .website-name {
@@ -72,10 +74,10 @@ video {
   BOOK CARD 
 */
 .book-card {
-  border: 1px solid black;
   padding: 2rem 1.5rem 1rem 1.5rem;
   border-radius: 0.8em;
   background-color: white;
+  box-shadow: 0px 0px 5px rgba(139, 138, 138, 0.75);
 }
 
 .book-info {
