@@ -57,9 +57,11 @@ function createBookCardElement(book) {
   if (book.isRead) {
     changeReadStatusButton.textContent = "Read";
     progressInfo.textContent = "Completed";
+    changeReadStatusButton.style.backgroundColor = "lightgreen";
   } else {
     changeReadStatusButton.textContent = "Not Read";
     progressInfo.textContent = "In Progress";
+    changeReadStatusButton.style.backgroundColor = "lightcoral";
   }
   bookCardButtons.appendChild(changeReadStatusButton);
   const deleteBookButton = document.createElement("button");
@@ -78,6 +80,9 @@ function createBookCardElement(book) {
     library.splice(bookIndex, 1);
     bookCard.remove();
     console.log(library);
+    if (library.length == 0) {
+      addBookCard.style.gridColumn = "2";
+    }
   });
 
   changeReadStatusButton.addEventListener("click", (e) => {
@@ -86,11 +91,13 @@ function createBookCardElement(book) {
       library[bookIndex].isRead = false;
       changeReadStatusButton.textContent = "Not Read";
       progressInfo.textContent = "In Progress";
+      changeReadStatusButton.style.backgroundColor = "lightcoral";
     } else if (book.isRead == false) {
       book.isRead = true;
       library[bookIndex].isRead = true;
       changeReadStatusButton.textContent = "Read";
       progressInfo.textContent = "Completed";
+      changeReadStatusButton.style.backgroundColor = "lightgreen";
     }
     console.log(`library after`);
     console.log(library);
