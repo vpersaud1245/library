@@ -120,4 +120,6 @@ form.addEventListener("submit", (e) => {
   createBookCardElement(book);
   form.reset();
   dialog.close();
+
+  addBookCard.style.gridColumn = "auto";
 });

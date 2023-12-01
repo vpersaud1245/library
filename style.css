@@ -110,8 +110,10 @@ video {
 
 .add-book-card {
   display: grid;
+  place-content: center;
   place-items: center;
-  gap: 1em;
+  gap: 20px;
+  grid-column: 2;
 }
 
 .add-book-card > button {
