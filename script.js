@@ -2,6 +2,12 @@ const libraryGrid = document.querySelector(".library-grid");
 const addBookCard = document.querySelector(".add-book-card");
 const addBookButton = document.querySelector(".add-book-button");
 const dialog = document.querySelector("dialog");
+const submitButton = document.querySelector(".submit-button");
+const form = document.querySelector("form");
+const titleInput = document.querySelector("input[name=title-input]");
+const authorInput = document.querySelector("input[name=author-input]");
+const pageInput = document.querySelector("input[name=page-input]");
+const isReadInput = document.querySelector("input[name=read-input]");
 const library = [];
 
 function Book(title, author, pages, isRead) {
@@ -72,6 +78,23 @@ addBookButton.addEventListener("click", (e) => {
 
 dialog.addEventListener("click", (e) => {
   if (e.target.nodeName === "DIALOG") {
+    form.reset();
     dialog.close();
   }
 });
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let book = new Book(
+    titleInput.value,
+    authorInput.value,
+    parseInt(pageInput.value),
+    isReadInput.checked
+  );
+  addBookToLibrary(book);
+  createBookCardElement(book);
+  form.reset();
+  dialog.close();
+});
+
+displayBooks();
