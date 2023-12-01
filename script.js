@@ -79,6 +79,22 @@ function createBookCardElement(book) {
     bookCard.remove();
     console.log(library);
   });
+
+  changeReadStatusButton.addEventListener("click", (e) => {
+    if (book.isRead) {
+      book.isRead = false;
+      library[bookIndex].isRead = false;
+      changeReadStatusButton.textContent = "Not Read";
+      progressInfo.textContent = "In Progress";
+    } else if (book.isRead == false) {
+      book.isRead = true;
+      library[bookIndex].isRead = true;
+      changeReadStatusButton.textContent = "Read";
+      progressInfo.textContent = "Completed";
+    }
+    console.log(`library after`);
+    console.log(library);
+  });
 }
 
 addBookButton.addEventListener("click", (e) => {
@@ -104,5 +120,4 @@ form.addEventListener("submit", (e) => {
   createBookCardElement(book);
   form.reset();
   dialog.close();
-  console.log(library);
 });
