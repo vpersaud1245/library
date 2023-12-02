@@ -34,11 +34,13 @@ video {
 */
 
 .nav {
-  height: 30%;
+  height: 80px;
   min-height: 80px;
   display: flex;
   align-items: center;
   box-shadow: 0px 5px 5px rgba(139, 138, 138, 0.75);
+  position: relative;
+  z-index: 10;
 }
 
 .website-name {
@@ -47,6 +49,7 @@ video {
 
 .logo {
   width: 5%;
+  min-width: 60px;
 }
 
 /*
@@ -67,7 +70,6 @@ video {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
   padding: 3rem 2rem;
-  transition: ease all 0.5s;
 }
 
 /* 
@@ -290,6 +292,11 @@ input[type="checkbox"] {
   .nav {
     height: 80px;
   }
+
+  .main {
+    height: 100vh;
+    overflow: auto;
+  }
 }
 
 @media (max-width: 700px) {
@@ -320,5 +327,19 @@ input[type="checkbox"] {
   .main {
     max-height: 100vh;
     overflow: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .book-card {
+    width: 100%;
+  }
+
+  .book-title {
+    font-size: 1.25rem;
+  }
+
+  .library-grid {
+    padding: 2rem 1rem;
   }
 }
