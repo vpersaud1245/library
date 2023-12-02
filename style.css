@@ -111,6 +111,7 @@ video {
   font-size: 0.8rem;
   border: 1px solid black;
   border-radius: 0.4em;
+  color: black;
 }
 
 .delete-book {
