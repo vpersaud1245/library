@@ -54,6 +54,7 @@ function createBookCardElement(book) {
   const progressInfo = document.createElement("div");
   progressInfo.className = "progress-info";
   changeReadStatusButton.className = "change-read-status";
+  // Set isRead button based on book object
   if (book.isRead) {
     changeReadStatusButton.textContent = "Read";
     progressInfo.textContent = "Completed";
@@ -81,6 +82,7 @@ function createBookCardElement(book) {
     bookCard.remove();
     console.log(library);
     if (library.length == 0) {
+      // Resets the add book card to the center based on screen size
       if (window.innerWidth >= 1200) {
         addBookCard.style.gridColumn = "2";
       } else if (window.innerWidth >= 700) {
@@ -114,6 +116,7 @@ addBookButton.addEventListener("click", (e) => {
   dialog.showModal();
 });
 
+// Closes dialog form if user clicks outside of the dialog
 dialog.addEventListener("click", (e) => {
   if (e.target.nodeName === "DIALOG") {
     form.reset();
@@ -134,9 +137,11 @@ form.addEventListener("submit", (e) => {
   form.reset();
   dialog.close();
 
+  // Change add book card to be within normal grid flow once books are added
   addBookCard.style.gridColumn = "auto";
 });
 
+// Centers add book card as window is resized
 window.addEventListener("resize", (e) => {
   if (library.length == 0) {
     if (window.innerWidth >= 1200) {
