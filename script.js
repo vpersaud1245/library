@@ -81,7 +81,13 @@ function createBookCardElement(book) {
     bookCard.remove();
     console.log(library);
     if (library.length == 0) {
-      addBookCard.style.gridColumn = "2";
+      if (window.innerWidth >= 1200) {
+        addBookCard.style.gridColumn = "2";
+      } else if (window.innerWidth >= 700) {
+        addBookCard.style.gridColumn = "span 2";
+      } else {
+        addBookCard.syle.gridColumn = "auto";
+      }
     }
   });
 
@@ -129,6 +135,18 @@ form.addEventListener("submit", (e) => {
   dialog.close();
 
   addBookCard.style.gridColumn = "auto";
+});
+
+window.addEventListener("resize", (e) => {
+  if (library.length == 0) {
+    if (window.innerWidth >= 1200) {
+      addBookCard.style.gridColumn = "2";
+    } else if (window.innerWidth < 1200) {
+      addBookCard.style.gridColumn = "span 2";
+    } else if (window.innerWidth < 700) {
+      addBookCard.style.gridColumn = "auto";
+    }
+  }
 });
 
 // Test data
