@@ -10,11 +10,20 @@ const pageInput = document.querySelector("input[name=page-input]");
 const isReadInput = document.querySelector("input[name=read-input]");
 let library = [];
 
-function Book(title, author, pages, isRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead;
+// function Book(title, author, pages, isRead) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.isRead = isRead;
+// }
+
+class Book {
+  constructor(title, author, pages, isRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+  }
 }
 
 function addBookToLibrary(book) {
@@ -126,12 +135,19 @@ dialog.addEventListener("click", (e) => {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  // let book = new Book(
+  //   titleInput.value,
+  //   authorInput.value,
+  //   parseInt(pageInput.value),
+  //   isReadInput.checked
+  // );
   let book = new Book(
     titleInput.value,
     authorInput.value,
     parseInt(pageInput.value),
     isReadInput.checked
   );
+
   addBookToLibrary(book);
   createBookCardElement(book);
   form.reset();
